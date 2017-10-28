@@ -1,3 +1,10 @@
+h1 {
+  font-size: 1.3em !important;
+}
+h1::after {
+  font-size: 1.3em !important;  
+  bottom: 10px !important;
+}
 :root {
   --screen-size-small: 30em; /* breakpoint reference only */
 }
@@ -58,14 +65,18 @@ blockquote cite::before {
   padding: 20px 10px;
 }
 nav a.active {
-  background-color: #ff2e88;
-  color: #fff;
+  color: #5DCC35;
+}
+a {
+  color: #FF7800;
+  border-bottom-color: transparent;
 }
 a[itemprop="url"] {
-  color: #ff9800;
+  color: #00FF11;
 }
-a[itemprop="url"]:hover {
+a:hover {
   color: #fff;
+  background-color: transparent;
 }
 a[href*="://"]::after,
 a[rel*="external"] {
