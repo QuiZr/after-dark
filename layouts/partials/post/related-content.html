@@ -2,11 +2,20 @@
 {{ $related := .Site.RegularPages.Related . | first $num_to_show }}
 {{ with $related }}
   <aside>
-    <header>Related Content</header>
+    <header>Powiązane</header>
     <ul>
       {{ range . }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <time datetime="{{ .ReadingTime }}M">{{ .ReadingTime }} minutes</time>
+        <time datetime="{{ .ReadingTime }}M">
+          {{ .ReadingTime }}
+          {{ if eq .ReadingTime 1 }}
+            minuta
+          {{ else if lt .ReadingTime 5 }}
+            minuty
+          {{ else }}
+            minut
+          {{ end }}
+        </time>
       {{ end }}
     </ul>
   </aside>
