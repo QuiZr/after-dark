@@ -3,7 +3,13 @@
 {{ end }}
 {{ define "main" }}
   <header>
-    <h1>{{ .Title }}</h1>
+    <h1>
+      {{ if eq .Title "Post" }}
+        Posty
+      {{ else }}
+        {{ .Title }}
+      {{ end }}
+    </h1>
   </header>
   {{ range .Paginator.Pages }}
     {{ partial "page-summary.html" . }}
