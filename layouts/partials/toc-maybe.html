@@ -4,6 +4,12 @@
     {{ .TableOfContents }}
   </details>
   <script>
+    const toc = document.getElementById("TableOfContents");
+    const h1 = toc.getElementsByTagName("ul")[0];
+    const h2 = h1.getElementsByTagName("li")[0].getElementsByTagName("ul")[0];
+    toc.appendChild(h2);
+    toc.removeChild(h1);
+    
     const el = document.querySelector('details summary')
     el.onclick = () => {
       (function(l,o,a,d,e,r){e=o.createElement(a),r=o.getElementsByTagName(a)[0];e.async=1;e.src=d;r.parentNode.insertBefore(e,r)})(window,document,'script','/js/smoothscroll.js');
